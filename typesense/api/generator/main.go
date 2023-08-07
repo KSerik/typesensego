@@ -8,8 +8,6 @@ import (
 	"os/exec"
 	"sort"
 	"strings"
-
-	"gopkg.in/yaml.v3"
 )
 
 type yml map[string]interface{}
@@ -42,59 +40,61 @@ func sortedSlice(params map[string]interface{}) []MapKV {
 // https://github.com/typesense/typesense-api-spec/blob/master/openapi.yml
 
 func main() {
-	m := make(yml)
+	/*
+		m := make(yml)
 
-	log.Println("Fetching openapi.yml from typesense api spec")
-	err := fetchOpenAPISpec()
-	if err != nil {
-		log.Fatalf("Aboring: %s", err.Error())
-	}
+		log.Println("Fetching openapi.yml from typesense api spec")
+		err := fetchOpenAPISpec()
+		if err != nil {
+			log.Fatalf("Aboring: %s", err.Error())
+		}
 
-	configFile, err := os.Open("./typesense/api/generator/openapi.yml")
-	if err != nil {
-		log.Fatalf("Unable to open config file: %s", err.Error())
-		return
-	}
+		configFile, err := os.Open("./typesense/api/generator/openapi.yml")
+		if err != nil {
+			log.Fatalf("Unable to open config file: %s", err.Error())
+			return
+		}
 
-	decoder := yaml.NewDecoder(configFile)
-	err = decoder.Decode(&m)
-	if err != nil {
-		log.Fatalf("error: %v", err)
-	}
+		decoder := yaml.NewDecoder(configFile)
+		err = decoder.Decode(&m)
+		if err != nil {
+			log.Fatalf("error: %v", err)
+		}
 
-	// Unwrapping the search parameters
-	log.Println("Unwrapping search parameters and multi_search parameters")
-	unwrapSearchParameters(&m)
-	unwrapMultiSearchParameters(&m)
-	// Unwrapping import and export parameters
-	log.Println("Unwrapping documents import parameters")
-	unwrapImportDocuments(&m)
-	log.Println("Unwrapping documents export parameters")
-	unwrapExportDocuments(&m)
-	// Unwrapping update documents with condition parameters
-	log.Println("Unwrapping documents update with condition parameters")
-	unwrapUpdateDocumentsWithConditionParameters(&m)
-	// Unwrapping delete document parameters
-	log.Println("Unwrapping documents delete parameters")
-	unwrapDeleteDocument(&m)
-	// Remove additionalProperties from SearchResultHit -> document
-	log.Println("Removing additionalProperties from SearchResultHit")
-	searchResultHit(&m)
+		// Unwrapping the search parameters
+		log.Println("Unwrapping search parameters and multi_search parameters")
+		unwrapSearchParameters(&m)
+		unwrapMultiSearchParameters(&m)
+		// Unwrapping import and export parameters
+		log.Println("Unwrapping documents import parameters")
+		unwrapImportDocuments(&m)
+		log.Println("Unwrapping documents export parameters")
+		unwrapExportDocuments(&m)
+		// Unwrapping update documents with condition parameters
+		log.Println("Unwrapping documents update with condition parameters")
+		unwrapUpdateDocumentsWithConditionParameters(&m)
+		// Unwrapping delete document parameters
+		log.Println("Unwrapping documents delete parameters")
+		unwrapDeleteDocument(&m)
+		// Remove additionalProperties from SearchResultHit -> document
+		log.Println("Removing additionalProperties from SearchResultHit")
+		searchResultHit(&m)
 
-	log.Println("Writing updated spec to generator.yml")
-	generatorFile, err := os.Create("./typesense/api/generator/generator.yml")
-	if err != nil {
-		log.Fatalf("Unable to open config file: %s", err.Error())
-		return
-	}
+		log.Println("Writing updated spec to generator.yml")
+		generatorFile, err := os.Create("./typesense/api/generator/generator.yml")
+		if err != nil {
+			log.Fatalf("Unable to open config file: %s", err.Error())
+			return
+		}
 
-	encode := yaml.NewEncoder(generatorFile)
-	encode.SetIndent(2)
-	err = encode.Encode(m)
-	if err != nil {
-		log.Fatalf("error: %v", err)
-	}
+		encode := yaml.NewEncoder(generatorFile)
+		encode.SetIndent(2)
+		err = encode.Encode(m)
+		if err != nil {
+			log.Fatalf("error: %v", err)
+		}
 
+	*/
 	// Use generator.yml to generate client_gen.go and types_gen.go
 	log.Println("Generating client")
 	oAPICodeGen()

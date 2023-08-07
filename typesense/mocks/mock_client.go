@@ -10,8 +10,8 @@ import (
 	http "net/http"
 	reflect "reflect"
 
+	api "github.com/KSerik/typesensego/typesense/api"
 	gomock "github.com/golang/mock/gomock"
-	api "github.com/typesense/typesense-go/typesense/api"
 )
 
 // MockAPIClientInterface is a mock of APIClientInterface interface.

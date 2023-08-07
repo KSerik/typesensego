@@ -6,9 +6,9 @@ package test
 import (
 	"testing"
 
+	"github.com/KSerik/typesensego/typesense/api"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/typesense/api"
 )
 
 func TestSearchOverrideUpsertNewOverride(t *testing.T) {

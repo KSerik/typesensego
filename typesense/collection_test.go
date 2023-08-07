@@ -5,11 +5,11 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/KSerik/typesensego/typesense/api"
+	"github.com/KSerik/typesensego/typesense/api/pointer"
+	"github.com/KSerik/typesensego/typesense/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.com/typesense/typesense-go/typesense/api"
-	"github.com/typesense/typesense-go/typesense/api/pointer"
-	"github.com/typesense/typesense-go/typesense/mocks"
 )
 
 func updateExistingSchema() *api.CollectionUpdateSchema {

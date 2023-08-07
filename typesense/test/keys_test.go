@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/KSerik/typesensego/typesense/api"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/typesense/api"
 )
 
 func TestKeyCreate(t *testing.T) {

@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/KSerik/typesensego/typesense/api"
+	"github.com/KSerik/typesensego/typesense/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.com/typesense/typesense-go/typesense/api"
-	"github.com/typesense/typesense-go/typesense/mocks"
 )
 
 func TestHealthStatus(t *testing.T) {

@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/KSerik/typesensego/typesense/api"
+	"github.com/KSerik/typesensego/typesense/api/pointer"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/typesense/api"
-	"github.com/typesense/typesense-go/typesense/api/pointer"
 )
 
 func newUUIDName(namePrefix string) string {

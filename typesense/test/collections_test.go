@@ -6,10 +6,10 @@ package test
 import (
 	"testing"
 
+	"github.com/KSerik/typesensego/typesense/api"
+	"github.com/KSerik/typesensego/typesense/api/pointer"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/typesense/api"
-	"github.com/typesense/typesense-go/typesense/api/pointer"
 )
 
 func TestCollectionCreate(t *testing.T) {

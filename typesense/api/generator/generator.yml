@@ -446,7 +446,7 @@ components:
       properties:
         group_key:
           items:
-            type: object
+            type: string
           type: array
         hits:
           description: The documents that matched the search query

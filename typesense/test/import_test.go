@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 package test
@@ -7,9 +8,9 @@ import (
 	"encoding/json"
 	"testing"
 
+	"github.com/KSerik/typesensego/typesense/api"
+	"github.com/KSerik/typesensego/typesense/api/pointer"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/typesense/api"
-	"github.com/typesense/typesense-go/typesense/api/pointer"
 )
 
 func TestDocumentsImport(t *testing.T) {
